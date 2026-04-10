@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-info">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% if user.is_authenticated %}
+<h3>Bonjour {{ firstname }} bienvenue sur la formation d'authentification </h3>
+<button type="submit"> <a href="/logout"> se deconnecter</a></button>
+{% else %}
+
+<button type="submit"> <a href="/register"> s'enregistrer</a></button>
+<button type="submit"> <a href="/login"> se connecter</a></button>
+
+{% endif %}
+
+{% endblock %}
+

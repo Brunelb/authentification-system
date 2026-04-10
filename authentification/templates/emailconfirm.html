@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Bienvenue sur Brunel authentification
+
+Bonjour {{ name }}
+
+Confirmez votre adresse email en cliquant sur le lien suivant :
+
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+{% endautoescape %}
